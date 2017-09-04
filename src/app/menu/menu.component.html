@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" [routerLink]="['/home']">DataCenter Tycoon</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+          aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul *ngIf="player" class="navbar-nav mr-auto">
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/dashboard']">Dashboard <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/datacenters']">Datacenters</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/servers']">Servers</a>
+      </li>
+    </ul>
+    <ul *ngIf="player" class="navbar-nav my-2 my-lg-0">
+      <li class="nav-item">
+        <a [routerLink]="['/login']" class="nav-link">Logout</a>
+      </li>
+    </ul>
+    <ul *ngIf="!player" class="navbar-nav mr-auto">
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/home']">Home</a>
+      </li>
+    </ul>
+    <ul *ngIf="!player" class="navbar-nav my-2 my-lg-0">
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a [routerLink]="['/login']" class="nav-link">Login</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a [routerLink]="['/signup']" class="nav-link">Sign Up</a>
+      </li>
+    </ul>
+  </div>
+
+</nav>
